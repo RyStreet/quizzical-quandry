@@ -1,0 +1,101 @@
+*, *::before,*::after{
+    box-sizing:border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+:root {
+    --white: #fffeff;
+    --mag: #ff01fb;
+    --blue: #02a9ea;
+    --yel: #faff00;
+    --black: #000300;
+    }
+
+body{
+background-color: var(--blue);
+color: var(--white);
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 100vh;
+
+}
+
+
+
+
+
+#startScreen{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #000300;
+    background-color: #ff01fb;
+    padding: 0px 5px 10px 5px;
+    }
+    
+#startScreen h1{
+    font-size: 64px;
+    text-align: center;
+}
+
+#startScreen p{
+    font-size: 48px;
+    text-align: center;
+}
+
+#startScreen button{
+background-color: var(--yel);
+font-size: 32px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+border-color: var(--black);
+border-radius: 50%;
+padding: 1%; 
+display: flex;
+margin: auto;
+}
+
+#container{
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--black);
+    box-shadow: 0 0 10px 2px;
+    font-size: 64px;
+}
+
+.btn-list{
+    display: grid;
+    text-align: left;
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    }
+
+.btn{
+        background-color: var(--mag);
+        font-size: 24px;
+        text-align: left;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+
+#question{
+    margin-bottom: 10px;
+    font-weight: bold;
+        
+    }
+
+
+.hide{
+    display: none;
+}
+
