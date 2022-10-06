@@ -10,7 +10,8 @@
     --blue: #02a9ea;
     --yel: #faff00;
     --black: #000300;
-    }
+}
+
 
 body{
 background-color: var(--blue);
@@ -22,7 +23,13 @@ justify-content: center;
 align-items: center;
 width: 100vw;
 height: 100vh;
+}
 
+#header{
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    left: 50px;
 }
 
 
@@ -34,22 +41,24 @@ height: 100vh;
     border-style: solid;
     border-width: 10px;
     border-color: #000300;
-    background-color: #ff01fb;
+    background-color: var(--white);
     padding: 0px 5px 10px 5px;
     }
     
 #startScreen h1{
     font-size: 64px;
     text-align: center;
+    color: var(--black)
 }
 
 #startScreen p{
     font-size: 48px;
     text-align: center;
+    color: var(--black);
 }
 
 #startScreen button{
-background-color: var(--yel);
+background-color: var(--blue);
 font-size: 32px;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 border-color: var(--black);
@@ -93,6 +102,22 @@ margin: auto;
     font-weight: bold;
         
     }
+    
+#highScoreContainer{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border-style: solid;
+        border-width: 5px;
+        border-color: #000300;
+        background-color: var(--white);
+        padding: 0px 5px 10px 5px;
+  }
+
+#highScoreContainer h1{
+    color: black;
+}
+#highScoreContainer p{
+    color: var(--black);
+}
 
 
 .hide{

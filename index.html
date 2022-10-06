@@ -11,19 +11,21 @@
 
 <body> 
 
-<!-- <div class="hide"> -->
-    <div id="startScreen">
+<header id="header">
+    <h2>View Highscores!</h2>
+    <h2 id = 'countdown'>Time:<span id="countdownSeconds">60</span>  </span></h2>
+</header>
+
+    <div id="startScreen" >
         <h1>Welcome to the Coding Quiz!</h1>
         <p>Answer coding questions in the time limit.</p>
         <button id="startBtn">Start Quiz</button>       
     </div>
-</div>
 
-
-    
+  
     <div id="container" class="hide">
         <div id="question">Question</div>
-            <div id="answers" class="btn-list">
+            <div id="answer-btns" class="btn-list">
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
                 <button class="btn">Answer 3</button>
@@ -31,6 +33,17 @@
             </div>
         </div>
     </div>
+
+<div id = highScoreContainer class="hide">
+        <h1 id="scoreDisplay">You Scored:</h1>
+        <form id="inputName">
+            <p>Save initials</p>
+            <input type="text" id="initials">
+            <input type="submit" id="submitScore">            
+        </form>
+    </div>
+</div>
+
     <script src="./homepage/home-script.js"></script>
 </body>
 </html>
