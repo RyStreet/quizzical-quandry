@@ -25,16 +25,25 @@ width: 100vw;
 height: 100vh;
 }
 
-#header{
+header{
     position: fixed;
     width: 100%;
-    top: 20px;
-    left: 50px;
+    top: 0px; 
+    height: 140px;
+    padding-bottom: 50px;
+    background-color: var(--mag);
 }
 
+/* header h2{
+    left: 50px; 
+    position: fixed;
+}
 
-
-
+header p{
+    top: 20px;
+    left: 50px;
+    position: fixed;
+} */
 
 #startScreen{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -77,6 +86,7 @@ margin: auto;
     color: var(--black);
     box-shadow: 0 0 10px 2px;
     font-size: 64px;
+    margin-top: 80px;
 }
 
 .btn-list{
@@ -102,6 +112,10 @@ margin: auto;
     font-weight: bold;
         
     }
+
+#answer-status p{
+    font-size: 20px;
+}
     
 #highScoreContainer{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -110,7 +124,10 @@ margin: auto;
         border-color: #000300;
         background-color: var(--white);
         padding: 0px 5px 10px 5px;
-  }
+        
+       
+    }
+  
 
 #highScoreContainer h1{
     color: black;
@@ -119,6 +136,10 @@ margin: auto;
     color: var(--black);
 }
 
+#scoreStorage p{
+    display: inline-block;
+    margin-left: 5px;
+}
 
 .hide{
     display: none;

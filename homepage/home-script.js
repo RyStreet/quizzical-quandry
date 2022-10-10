@@ -5,35 +5,43 @@ const questionEl = document.getElementById("question");
 const answerBtnEl = document.getElementById("answer-btns");
 const highScore = document.getElementById('highScoreContainer');
 
-
 var randomQuestions, currentQuestionIndex
 
+// Timer Variables//
 const countdownEl = document.getElementById('countdown');
 const countdownSeconds = document.getElementById('countdownSeconds');
 let time = 60;
 
+// correct / wrong answer variables//
+
+const statusCorrect = document.getElementById('correctAnswer');
+const statusWrong = document.getElementById('wrongAnswer');
+
+//Timer function//
 function startCountdown() {
 var timer = setInterval(updateCountdown, 1000);
 function updateCountdown(){
     countdownSeconds.innerHTML = `${time}` ;
     time--;
+    // when timer hits 0, it hides the first two screens and displays final score screen//
     if (time === 0) {
     clearInterval(timer);
     countdownSeconds.innerHTML = '0';
-    startScreen.classList.add('hide');
-    questionContainer.classList.add("hide");
-    highScoreContainer.classList.remove("hide");
+    startScreen.classList.add('hide'); //hide start screen//
+    questionContainer.classList.add("hide"); //hide question screen//
+    highScoreContainer.classList.remove("hide"); //removes class hide from score screen//
     }
 }
 }
 
-
+//Button functionality to start game and run function for next question//
 startButton.addEventListener("click", startGame);
-answerBtnEl.addEventListener('click', () => {
+answerBtnEl.addEventListener('click', () => { //answer button click prompts next question//
     currentQuestionIndex++
     nextQuestion();
 })
 
+//Starts game, displays random question, begins the timer//
 function startGame() {
     console.log('start game');
     startScreen.classList.add('hide');
@@ -44,10 +52,12 @@ function startGame() {
     startCountdown()
 }
 
+
 function nextQuestion() {
     resetState()
     showQuestion(randomQuestions[currentQuestionIndex])
 }
+
 
 function showQuestion(question) {
     questionEl.innerText = question.question
@@ -62,6 +72,7 @@ function showQuestion(question) {
         answerBtnEl.appendChild(button)
     })
    };
+
 
 function resetState() {
     while(answerBtnEl.firstChild){
@@ -80,11 +91,12 @@ function selectAnswer(event) {
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
     }
+
+  
 }
 
 
-
-
+//List of all questions//
 const questions = [
 
     {
@@ -109,10 +121,19 @@ const questions = [
     {
         question: "This argument returns either true or false:",
         answers: [
-            {text: "Boolean", correct: true},
             {text: "Modulus", correct: false},
+            {text: "Boolean", correct: true},
             {text: "Arithmetic", correct: false},
             {text: "Rogerian", correct: false},
+        ]
+    },
+    {
+        question: "Which of these is a JS comment:",
+        answers: [
+            {text: "//Comment//", correct: true},
+            {text: "<!--Comment-->", correct: false},
+            {text: "/*Comment*/", correct: false},
+            {text: "?Comment?", correct: false},
         ]
     },
 ]

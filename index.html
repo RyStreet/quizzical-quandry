@@ -9,20 +9,23 @@
     <title>Quiz App</title>
 </head>
 
-<body> 
-
 <header id="header">
     <h2>View Highscores!</h2>
     <h2 id = 'countdown'>Time:<span id="countdownSeconds">60</span>  </span></h2>
+    <p>Your Score:</p>
 </header>
 
+<body> 
+
+
+<!-- Start Screen-->
     <div id="startScreen" >
         <h1>Welcome to the Coding Quiz!</h1>
         <p>Answer coding questions in the time limit.</p>
         <button id="startBtn">Start Quiz</button>       
     </div>
 
-  
+  <!--Questions Screen-->
     <div id="container" class="hide">
         <div id="question">Question</div>
             <div id="answer-btns" class="btn-list">
@@ -31,16 +34,24 @@
                 <button class="btn">Answer 3</button>
                 <button class="btn">Answer 4</button>
             </div>
+            <div id="answer-status">
+                <p id="correctAnswer" class="hide">That's Correct!</p>
+                <p id="wrongAnswer" class="hide">That's Incorrect</p>
+            </div>
         </div>
     </div>
-
-<div id = highScoreContainer class="hide">
+<!-- HighScore Input Screen -->
+    <div id = highScoreContainer class="hide">
         <h1 id="scoreDisplay">You Scored:</h1>
         <form id="inputName">
             <p>Save initials</p>
             <input type="text" id="initials">
-            <input type="submit" id="submitScore">            
+            <input type="submit" id="submitScore">           
         </form>
+        <div id= "scoreStorage">
+            <p>Initials:</p>
+            <p>Score:</p>
+        </div>
     </div>
 </div>
 
