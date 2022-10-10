@@ -11,11 +11,9 @@ var randomQuestions, currentQuestionIndex
 const countdownEl = document.getElementById('countdown');
 const countdownSeconds = document.getElementById('countdownSeconds');
 let time = 60;
+timeSubtraction = 30;
 
-// correct / wrong answer variables//
-
-const statusCorrect = document.getElementById('correctAnswer');
-const statusWrong = document.getElementById('wrongAnswer');
+const ansStatus = document.getElementById('answer-status');
 
 //Timer function//
 function startCountdown() {
@@ -83,17 +81,27 @@ function resetState() {
 function selectAnswer(event) {
     const selectedButton = event.target
     const correct = selectedButton.dataset.correct
-    Array.from(answerBtnEl.children).forEach(button => {
-    })
 
-    // At last question, go to highscore screen//
+    if(correct){
+        console.log('correct');
+       ansStatus.textContent=('Correct!')
+    } else {
+        console.log('wrong');
+        ansStatus.textContent=('Incorrect');
+        countdownSeconds.innerHTML = `${time}` ;
+        time - timeSubtraction;
+
+    }
+    
+    Array.from(answerBtnEl.children).forEach(button => {})
+    
+    // After last question, go to highscore screen//
     if(randomQuestions.length === currentQuestionIndex + 1){
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
     }
-
-  
 }
+
 
 
 //List of all questions//
