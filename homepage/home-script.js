@@ -4,20 +4,23 @@ const questionContainer = document.getElementById("container");
 const questionEl = document.getElementById("question");
 const answerBtnEl = document.getElementById("answer-btns");
 const highScore = document.getElementById('highScoreContainer');
+const scoreDisplay = document.getElementById('scoreDisplay')
 
 var randomQuestions, currentQuestionIndex
 
 // Timer Variables//
 const countdownEl = document.getElementById('countdown');
 const countdownSeconds = document.getElementById('countdownSeconds');
+var timer
 let time = 60;
-timeSubtraction = 30;
+timeSubtraction = 10;
 
 const ansStatus = document.getElementById('answer-status');
 
+
 //Timer function//
 function startCountdown() {
-var timer = setInterval(updateCountdown, 1000);
+timer = setInterval(updateCountdown, 1000);
 function updateCountdown(){
     countdownSeconds.innerHTML = `${time}` ;
     time--;
@@ -87,21 +90,28 @@ function selectAnswer(event) {
        ansStatus.textContent=('Correct!')
     } else {
         console.log('wrong');
-        ansStatus.textContent=('Incorrect. The Correct answer is: ' + correct);
-        countdownSeconds.innerHTML = `${time}` ;
-        time - timeSubtraction;
-
+        ansStatus.textContent= ('Incorrect.');
+        time = time - timeSubtraction;
     }
     
     Array.from(answerBtnEl.children).forEach(button => {})
     
     // After last question, go to highscore screen//
     if(randomQuestions.length === currentQuestionIndex + 1){
+    
+    finished();
+}
+}
+    
+    function finished() {
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
-    
+    console.log('finish')
+    clearInterval(timer);
+    var finalScore = time
+    scoreDisplay.textContent = "You Scored: " + finalScore;
     }
-}
+
 
 
 
