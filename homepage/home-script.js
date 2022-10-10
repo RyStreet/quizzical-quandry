@@ -87,7 +87,7 @@ function selectAnswer(event) {
        ansStatus.textContent=('Correct!')
     } else {
         console.log('wrong');
-        ansStatus.textContent=('Incorrect');
+        ansStatus.textContent=('Incorrect. The Correct answer is: ' + correct);
         countdownSeconds.innerHTML = `${time}` ;
         time - timeSubtraction;
 
@@ -99,6 +99,7 @@ function selectAnswer(event) {
     if(randomQuestions.length === currentQuestionIndex + 1){
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
+    
     }
 }
 
