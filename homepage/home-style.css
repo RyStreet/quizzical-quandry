@@ -124,6 +124,7 @@ margin: auto;
         border-color: #000300;
         background-color: var(--white);
         padding: 0px 5px 10px 5px;
+       
         
        
     }
@@ -140,6 +141,18 @@ margin: auto;
     display: inline-block;
     margin-left: 5px;
 }
+
+#start-over button{
+    background-color: var(--blue);
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: var(--black);
+    border-radius: 50%;
+    padding: 4%; 
+ 
+    margin-top: 20px;
+    margin-left: 20px;
+    }
 
 .hide{
     display: none;

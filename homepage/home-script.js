@@ -6,6 +6,9 @@ const answerBtnEl = document.getElementById("answer-btns");
 const highScore = document.getElementById('highScoreContainer');
 const scoreDisplay = document.getElementById('scoreDisplay');
 const submitScore = document.getElementById('submitScore');
+const userNameSpan = document.getElementById('initials-render');
+const userScoreSpan = document.getElementById("score-render");
+const restartGame = document.getElementById('game-reset');
 // const saveInitials = document.getElementById('initials').value;
 
 var randomQuestions, currentQuestionIndex
@@ -113,16 +116,39 @@ function selectAnswer(event) {
     scoreDisplay.textContent = "You Scored: " + (time * 2);
     }
 
-    submitScore.addEventListener("click", saveGame()); 
+submitScore.addEventListener("click", saveGame); 
 
     // saves score and initials in local storage, then displays them on score board//
 
 function saveGame(){
-        var initials = document.getElementById('initials').textContent;
+        var initials = document.getElementById('initials').value;
+
         localStorage.setItem("initials", initials);
         console.log("game saved")
 
+        var score = (time * 2);
+        localStorage.setItem('score', score);
+        
+        renderScore();
     }
+
+function renderScore(){
+    console.log('render score')
+    var initials = localStorage.getItem("initials");
+    var score = localStorage.getItem('score');
+
+    userNameSpan.textContent = initials;
+    userScoreSpan.textContent = score;
+}
+
+// restartGame.addEventListener('click', startOver)
+
+// function startOver(){
+//     startScreen.classList.remove('hide'); //reveal start screen//
+//     questionContainer.classList.add("hide"); //hide question screen//
+//     highScoreContainer.classList.add("hide"); //adds class hide from score screen//
+//     let time = 60 
+// }
 
 
 

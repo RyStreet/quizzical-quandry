@@ -47,13 +47,17 @@
         <form id="inputName">
             <p>Save initials</p>
             <input type="text" id="initials">
-            <input type="submit" id="submitScore">           
+            <button type="submit" id="submitScore">Submit</button>           
         </form>
         <div id= "scoreStorage">
-            <p>Initials:</p>
-            <p>Score:</p>
+            <p>Initials:<span id = "initials-render"></span></p>
+            <p>Score:<span id = "score-render"></span></p>
+        </div>
+        <div id = "start-over">
+            <button id = "game-reset">Start Over</button>
         </div>
     </div>
+    
 </div>
 
     <script src="./homepage/home-script.js"></script>
