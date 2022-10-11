@@ -9,7 +9,6 @@ const submitScore = document.getElementById('submitScore');
 const userNameSpan = document.getElementById('initials-render');
 const userScoreSpan = document.getElementById("score-render");
 const restartGame = document.getElementById('game-reset');
-// const saveInitials = document.getElementById('initials').value;
 
 var randomQuestions, currentQuestionIndex
 
@@ -50,7 +49,7 @@ answerBtnEl.addEventListener('click', () => { //answer button click prompts next
         finished();
         renderScore();
     }
-    else{ nextQuestion();
+    else{ nextQuestion(); //if not last question, proceed to next//
 }
 }
 )
@@ -62,8 +61,8 @@ function startGame() {
     randomQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0
     questionContainer.classList.remove('hide');
-    nextQuestion()
-    startCountdown()
+    nextQuestion() //but press prompts next question function
+    startCountdown() //button press begins countdown function//
 }
 
 
@@ -72,7 +71,7 @@ function nextQuestion() {
     showQuestion(randomQuestions[currentQuestionIndex])
 }
 
-
+//appends questions to buttons on question screen//
 function showQuestion(question) {
     questionEl.innerText = question.question
     question.answers.forEach(answer => {
@@ -87,17 +86,19 @@ function showQuestion(question) {
     })
    };
 
-
+// removes child elements in html//
 function resetState() {
     while(answerBtnEl.firstChild){
         answerBtnEl.removeChild(answerBtnEl.firstChild)
     }
 }
 
+// Determines if button chosen is either correct or incorrect
 function selectAnswer(event) {
     const selectedButton = event.target
     const correct = selectedButton.dataset.correct
 
+    //displays status of answer chosen//
     if(correct){
         console.log('correct');
        ansStatus.textContent=('Correct!')
@@ -111,7 +112,7 @@ function selectAnswer(event) {
     
    
 }
-
+//goes to highscore screen, clears timer, displays score//
     function finished() {
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
@@ -138,6 +139,7 @@ function saveGame(e){
         
     }
 
+    //pulls scores and names from local storage//
 function renderScore(){
     console.log('render score')
     var initials = localStorage.getItem("initials");
@@ -147,15 +149,10 @@ function renderScore(){
     userScoreSpan.textContent = score;
 }
 
-restartGame.addEventListener('click', startOver)
-
-function startOver(){
-    // startScreen.classList.remove('hide'); //reveal start screen//
-    // questionContainer.classList.add("hide"); //hide question screen//
-    // highScoreContainer.classList.add("hide"); //adds class hide from score screen//
-    // let time = 60 
+restartGame.addEventListener('click', function startOver(){
     location.reload();
-}
+})
+
 
 
 
