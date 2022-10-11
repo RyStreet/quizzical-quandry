@@ -36,7 +36,8 @@ function updateCountdown(){
     startScreen.classList.add('hide'); //hide start screen//
     questionContainer.classList.add("hide"); //hide question screen//
     highScoreContainer.classList.remove("hide"); //removes class hide from score screen//
-    }
+    
+}
 }
 }
 
@@ -44,8 +45,15 @@ function updateCountdown(){
 startButton.addEventListener("click", startGame);
 answerBtnEl.addEventListener('click', () => { //answer button click prompts next question//
     currentQuestionIndex++
-    nextQuestion();
-})
+     // After last question, go to highscore screen//
+     if(randomQuestions.length === currentQuestionIndex){
+        finished();
+        renderScore();
+    }
+    else{ nextQuestion();
+}
+}
+)
 
 //Starts game, displays random question, begins the timer//
 function startGame() {
@@ -101,11 +109,7 @@ function selectAnswer(event) {
     
     Array.from(answerBtnEl.children).forEach(button => {})
     
-    // After last question, go to highscore screen//
-    if(randomQuestions.length === currentQuestionIndex + 1){
-    
-    finished();
-}
+   
 }
 
     function finished() {
@@ -120,7 +124,8 @@ submitScore.addEventListener("click", saveGame);
 
     // saves score and initials in local storage, then displays them on score board//
 
-function saveGame(){
+function saveGame(e){
+    e.preventDefault();
         var initials = document.getElementById('initials').value;
 
         localStorage.setItem("initials", initials);
@@ -130,6 +135,7 @@ function saveGame(){
         localStorage.setItem('score', score);
         
         renderScore();
+        
     }
 
 function renderScore(){
@@ -141,14 +147,15 @@ function renderScore(){
     userScoreSpan.textContent = score;
 }
 
-// restartGame.addEventListener('click', startOver)
+restartGame.addEventListener('click', startOver)
 
-// function startOver(){
-//     startScreen.classList.remove('hide'); //reveal start screen//
-//     questionContainer.classList.add("hide"); //hide question screen//
-//     highScoreContainer.classList.add("hide"); //adds class hide from score screen//
-//     let time = 60 
-// }
+function startOver(){
+    // startScreen.classList.remove('hide'); //reveal start screen//
+    // questionContainer.classList.add("hide"); //hide question screen//
+    // highScoreContainer.classList.add("hide"); //adds class hide from score screen//
+    // let time = 60 
+    location.reload();
+}
 
 
 
