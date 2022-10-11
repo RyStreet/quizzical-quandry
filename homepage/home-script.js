@@ -9,6 +9,7 @@ const submitScore = document.getElementById('submitScore');
 const userNameSpan = document.getElementById('initials-render');
 const userScoreSpan = document.getElementById("score-render");
 const restartGame = document.getElementById('game-reset');
+const viewHighScore = document.getElementById('viewHighScore')
 
 var randomQuestions, currentQuestionIndex
 
@@ -110,7 +111,6 @@ function selectAnswer(event) {
     
     Array.from(answerBtnEl.children).forEach(button => {})
     
-   
 }
 //goes to highscore screen, clears timer, displays score//
     function finished() {
@@ -120,6 +120,7 @@ function selectAnswer(event) {
     clearInterval(timer);
     scoreDisplay.textContent = "You Scored: " + (time * 2);
     }
+
 
 submitScore.addEventListener("click", saveGame); 
 
@@ -194,6 +195,33 @@ const questions = [
             {text: "<!--Comment-->", correct: false},
             {text: "/*Comment*/", correct: false},
             {text: "?Comment?", correct: false},
+        ]
+    },
+    {
+        question: "Use this Git Command to send repo changes to GitHub:",
+        answers: [
+            {text: "Git Push", correct: true},
+            {text: "Git Pull", correct: false},
+            {text: "Git Status", correct: false},
+            {text: "Git Commit", correct: false},
+        ]
+    },
+    {
+        question: "Use this Git Command to receive repo changes to GitHub:",
+        answers: [
+            {text: "Git Push", correct: false},
+            {text: "Git Pull", correct: true},
+            {text: "Git Status", correct: false},
+            {text: "Git Commit", correct: false},
+        ]
+    },
+    {
+        question: "Which language is a CSS database?",
+        answers: [
+            {text: "Java", correct: false},
+            {text: "Bootstrap", correct: true},
+            {text: "HTML", correct: false},
+            {text: "JQuery", correct: false},
         ]
     },
 ]
