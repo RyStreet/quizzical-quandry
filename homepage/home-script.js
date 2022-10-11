@@ -4,7 +4,9 @@ const questionContainer = document.getElementById("container");
 const questionEl = document.getElementById("question");
 const answerBtnEl = document.getElementById("answer-btns");
 const highScore = document.getElementById('highScoreContainer');
-const scoreDisplay = document.getElementById('scoreDisplay')
+const scoreDisplay = document.getElementById('scoreDisplay');
+const submitScore = document.getElementById('submitScore');
+// const saveInitials = document.getElementById('initials').value;
 
 var randomQuestions, currentQuestionIndex
 
@@ -102,16 +104,25 @@ function selectAnswer(event) {
     finished();
 }
 }
-    
+
     function finished() {
     questionContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
     console.log('finish')
     clearInterval(timer);
-    var finalScore = time
-    scoreDisplay.textContent = "You Scored: " + finalScore;
+    scoreDisplay.textContent = "You Scored: " + (time * 2);
     }
 
+    submitScore.addEventListener("click", saveGame()); 
+
+    // saves score and initials in local storage, then displays them on score board//
+
+function saveGame(){
+        var initials = document.getElementById('initials').textContent;
+        localStorage.setItem("initials", initials);
+        console.log("game saved")
+
+    }
 
 
 
