@@ -1,4 +1,4 @@
-# Quizzical Quandry
+# Quizzical Quandry - Javascript Quiz App
 
 This app is a short quiz on different coding basics. When a user starts the quiz, a 60 second timer counts down. If they answer incorrectly, then time is subtracted. Score at the end is based on the amount of time left. You can save your score and replay to try for a better one. 
 
