@@ -1,6 +1,6 @@
 # Quizzical Quandry
 
-This app was made to be a short quiz about different coding basics. When a user starts the quiz, a 60 second timer counts down. If they answer incorrectly, then time is subtracted. Score at the end is based on the amount of time left. You can save your score and replay to try for a better one. 
+This app is a short quiz on different coding basics. When a user starts the quiz, a 60 second timer counts down. If they answer incorrectly, then time is subtracted. Score at the end is based on the amount of time left. You can save your score and replay to try for a better one. 
 
 ![image](https://user-images.githubusercontent.com/112584082/195227108-b7a9cfe6-52a6-48e6-9284-a111bee83f32.png)
 ![image](https://user-images.githubusercontent.com/112584082/195227130-d1ed5158-24e9-4dcb-8b5a-fd4ec06b56c7.png)
