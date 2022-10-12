@@ -207,7 +207,7 @@ const questions = [
         ]
     },
     {
-        question: "Use this Git Command to receive repo changes to GitHub:",
+        question: "Use this Git Command to receive repo changes from GitHub:",
         answers: [
             {text: "Git Push", correct: false},
             {text: "Git Pull", correct: true},
